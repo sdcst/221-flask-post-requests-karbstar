@@ -3,7 +3,7 @@
 import json, requests
 
 
-url = "http://127.0.0.1:5000/post"
+url = "http://10.22.103.18:5000/post"
 payload = {
     'var1'  : "some data",
     'age'   : 20,

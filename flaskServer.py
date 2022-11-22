@@ -78,4 +78,4 @@ def jsondata():
     return json.dumps(output)
 
 
-app.run()           #starts the app in test mode with default settings
+app.run("0.0.0.0")           #starts the app in test mode with default settings

@@ -19,4 +19,4 @@ def postResponse():
     return json.dumps(data)
 
 
-app.run()
+app.run("0.0.0.0")
