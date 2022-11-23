@@ -41,8 +41,8 @@ def main():
     db = sqlite3.connect("test.db")
     cursor = db.cursor()
     createTable(cursor)
-    #addData(db,cursor)
-    #db.commit()
+    addData(db,cursor)
+    db.commit()
     get(cursor)
 
 if __name__ == "__main__":
