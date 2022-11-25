@@ -9,6 +9,7 @@ CORS(app)
 
 @app.route("/going",methods=["POST"])
 def postResponse():
+    nop=True
     # a simple echo server that response with the payload received.
     payload = request.form
     print(request.form)
@@ -37,7 +38,12 @@ def postResponse():
         i=i[0]            
         if i in new:
             new.remove(i)
-        else:
+            nop==False
+            che=False
+        elif nop==True:
+            che=True
+    if che==True:
+        for l in new:
             wild=new[nu].split(' ')
             x=len(wild)
             x=round(x/2)+random.randint(-1,1)
@@ -47,13 +53,20 @@ def postResponse():
             w=wild[-1].split('-')
             che2=''.join(['%', f'{w[0]}', '%'])
             che3=''.join(['%', f'{wild[x]}', '%'])
-            nu=nu+1
-            queries=[che,che2,che3]
-            for i in queries:
-                q = f"select * from customers where quote like '{i}'"
+            kil=0
+            if che2==che3 or che==che2:
+                queries=[che,che3]
+            else:
+                queries=[che,che2,che3]
+            for j in queries:
+                q = f"select * from customers where quote like '{j}'"
                 r = cursor.execute(q)
                 data = list(r)
-                print(i, data)
+                if data!=[]:
+                    kil=kil+1
+                print(j, data)
+                if kil==2:
+                    new.remove(i)
     data2 = [
         new
         ]
