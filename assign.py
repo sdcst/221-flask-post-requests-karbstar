@@ -66,11 +66,11 @@ def postResponse():
                     kil=kil+1
                 print(j, data)
                 if kil==2:
-                    new.remove(i)
+                    new.remove(l)
     data2 = [
         new
         ]
-    if data2==[]:
+    if data2==[[]]:
         return'quote alredy in the system'
     for i in data2:
         i=i[0]

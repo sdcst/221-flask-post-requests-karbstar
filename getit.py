@@ -48,4 +48,9 @@ if che==True:
                 kil=kil+1
             print(j, data)
             if kil==2:
-                new.remove(i)
+                new.remove(l)
+data2 = [
+        new
+        ]
+if data2==[]:
+    print('quote alredy in the system')
